@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Attaque</name>
+    <events>
+        <variable constant="0" name="anglePersoAttaque" sid="237973583987202" static="0" type="number">0</variable>
+        <variable constant="0" name="chronoAttaque" sid="980553069298394" static="0" type="number">0</variable>
+        <variable constant="0" name="timeAttaque2" sid="127720347311499" static="0" type="number">0.2</variable>
+        <event-block sid="534817805691772">
+            <conditions>
+                <condition id="0" name="On function" sid="989050837163903" type="Function">
+                    <param id="0" name="Name">&quot;Attaque&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="608333518974053">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="404633240883788" type="Perso1">
+                            <param id="0" name="Instance variable">Attaque</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="649592278678009" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(5)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="311802195297701" type="Perso1">
+                            <param id="0" name="Instance variable">Degat</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="197456128271071" type="Perso1">
+                            <param id="0" name="Animation">&quot;Degat&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="369935347711568">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="382696923655389" type="Perso1">
+                            <param id="0" name="Instance variable">Attaque</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="407783533456257" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(4)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="480215152681395" type="Perso1">
+                            <param id="0" name="Animation">&quot;Attaque&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="316166113341455" type="Perso1">
+                            <param id="0" name="Instance variable">Attaque</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="812050722747590" type="System">
+                            <param id="0" name="Variable">anglePersoAttaque</param>
+                            <param id="1" name="Value">Perso1.Angle + Function.Param(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="602860226025388">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="314568377085816" type="Perso1">
+                            <param id="0" name="Instance variable">Degat</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="303009958600906" type="System" />
+                        <condition id="-14" name="Pick by unique ID" sid="344077473911524" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(5)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-23" name="Move at angle" sid="910414808899965" type="Perso1">
+                            <param id="0" name="Angle">anglePersoAttaque</param>
+                            <param id="1" name="Distance">Function.Param(2)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="614846949678837" type="System">
+                            <param id="0" name="Variable">chronoAttaque</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="602720257156224">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="370645845524478" type="System">
+                            <param id="0" name="Variable">chronoAttaque</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">Function.Param(3)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="762617137995552">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="374142125993236" type="Perso1">
+                                    <param id="0" name="Unique ID">Function.Param(5)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="159058354366369" type="Perso1">
+                                    <param id="0" name="Instance variable">Degat</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="813507954846107" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="103373241942026" type="System">
+                                    <param id="0" name="Variable">chronoAttaque</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="771235052783846">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="518896410319274" type="Perso1">
+                                    <param id="0" name="Unique ID">Function.Param(4)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="646014054876886" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="221355281194483" type="Perso1">
+                                    <param id="0" name="Instance variable">Attaque</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="671290083241850">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="541469307094828" type="ColliderAttaque">
+                    <param id="0" name="Object">Perso1</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="161646366033186" type="ColliderAttaque">
+                    <param id="0" name="Object">ColliderDefense</param>
+                </condition>
+                <condition id="11" name="Collisions enabled" sid="744393959678771" type="ColliderAttaque" />
+                <condition id="-14" name="Pick by unique ID" sid="190855163870112" type="Perso1">
+                    <param id="0" name="Unique ID">UID2</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="329953626161354" type="ColliderAttaque">
+                    <param id="0" name="Unique ID">UID3</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="492892790932393" type="ColliderDefense">
+                    <param id="0" name="Unique ID">UID6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="488029794342994" type="Function">
+                    <param id="0" name="Name">&quot;Attaque&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}colliderAttaque.angleAttaque{###}Perso1.impulseAttaque*dt{###}timeAttaque2{###}UID1{###}UID2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="287863996033126">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="239319951385592" type="ColliderAttaque">
+                    <param id="0" name="Object">Perso1</param>
+                </condition>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="695139708720620" type="ColliderAttaque">
+                    <param id="0" name="Object">ColliderDefense</param>
+                </condition>
+                <condition id="11" name="Collisions enabled" sid="709430040183169" type="ColliderAttaque" />
+                <condition id="-14" name="Pick by unique ID" sid="102280838605304" type="Perso1">
+                    <param id="0" name="Unique ID">UID1</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="550696215009577" type="ColliderAttaque">
+                    <param id="0" name="Unique ID">UID4</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="751622052352135" type="ColliderDefense">
+                    <param id="0" name="Unique ID">UID5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="636214013229450" type="Function">
+                    <param id="0" name="Name">&quot;Attaque&quot;</param>
+                    <param id="1" name="Parameter {n}">0{###}colliderAttaque.angleAttaque{###}Perso1.impulseAttaque*dt{###}timeAttaque2{###}UID2{###}UID1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="567180229337964">
+            <conditions>
+                <condition id="-14" name="Pick by unique ID" sid="865988843876058" type="Perso1">
+                    <param id="0" name="Unique ID">UID1</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="654992891255550" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="974523237506124">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="606533783424445" type="Perso1">
+                            <param id="0" name="Instance variable">Attaque</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="252431621637089" type="Function">
+                            <param id="0" name="Name">&quot;Attaque&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}0{###}Perso1.impulseAttaque*dt{###}timeAttaque2{###}UID1{###}UID2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="479941968924026">
+            <conditions>
+                <condition id="-14" name="Pick by unique ID" sid="968580926602253" type="Perso1">
+                    <param id="0" name="Unique ID">UID2</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="439055366452671" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="466191713483505">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="323239785075673" type="Perso1">
+                            <param id="0" name="Instance variable">Attaque</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="980883638724825" type="Function">
+                            <param id="0" name="Name">&quot;Attaque&quot;</param>
+                            <param id="1" name="Parameter {n}">0{###}0{###}Perso1.impulseAttaque*dt{###}timeAttaque2{###}UID2{###}UID1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

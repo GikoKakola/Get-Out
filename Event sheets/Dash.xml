@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Dash</name>
+    <events>
+        <variable constant="0" name="chronoDash" sid="387032828596510" static="0" type="number">0</variable>
+        <variable comment="angle du perso 1 au moment du dash" constant="0" name="anglePersoDash" sid="805938123144476" static="0" type="number">0</variable>
+        <variable constant="0" name="timedash" sid="217236128587771" static="0" type="number">0.2</variable>
+        <variable constant="0" name="chronoDash2" sid="654590518640992" static="0" type="number">0</variable>
+        <variable comment="angle du perso 1 au moment du dash" constant="0" name="anglePersoDash2" sid="827250786030912" static="0" type="number">0</variable>
+        <event-block sid="636237299834443">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="355839262515336" type="Perso1">
+                    <param id="0" name="Object">Wall</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="856042871997102" type="Perso1">
+                    <param id="0" name="Unique ID">UID1</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="912284495382701" type="Perso1">
+                    <param id="0" name="Instance variable">Dash</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="973450900911638" type="System">
+                    <param id="0" name="Variable">anglePersoDash</param>
+                    <param id="1" name="Value">-anglePersoDash</param>
+                </action>
+                <action id="-9" name="Set value" sid="342321820230766" type="System">
+                    <param id="0" name="Variable">chronoDash</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="425611075838045">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="650619759268006" type="Perso1">
+                    <param id="0" name="Object">Wall</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="872124659934544" type="Perso1">
+                    <param id="0" name="Unique ID">UID2</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="157025881531258" type="Perso1">
+                    <param id="0" name="Instance variable">Dash</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="649854256641871" type="System">
+                    <param id="0" name="Variable">anglePersoDash2</param>
+                    <param id="1" name="Value">-anglePersoDash2</param>
+                </action>
+                <action id="-9" name="Set value" sid="735451548769984" type="System">
+                    <param id="0" name="Variable">chronoDash2</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="806506289133024">
+            <conditions>
+                <condition id="0" name="On function" sid="775907113655082" type="Function">
+                    <param id="0" name="Name">&quot;Dash&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="anglePersoOnDash" sid="175518827986624" static="0" type="number">0</variable>
+                <variable constant="0" name="chronoOnDash" sid="316595200078069" static="0" type="number">0</variable>
+                <event-block sid="515644517171144">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="239757270158197" type="Perso1">
+                            <param id="0" name="Instance variable">Dash</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="340854467255033" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="302493080593136" type="Audio">
+                            <param id="0" name="Audio file">Woosh</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="483862508760602">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="492573786847404" type="System">
+                                    <param id="0" name="Variable">UID1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="526326385121988" type="System">
+                                    <param id="0" name="Variable">anglePersoDash</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="635964098176936" type="Perso1">
+                                    <param id="0" name="Instance variable">Dash</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="451901945444911" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Dash&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="2" name="Stop" sid="128949111455396" type="Perso1" />
+                                <action id="5" name="Set frame" sid="227283307156307" type="Perso1">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="629861197878460">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="195724889145845" type="System">
+                                    <param id="0" name="Variable">UID2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="337188303875681" type="System">
+                                    <param id="0" name="Variable">anglePersoDash2</param>
+                                    <param id="1" name="Value">Function.Param(0)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="156117560776818" type="Perso1">
+                                    <param id="0" name="Instance variable">Dash</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="575404120453996" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Dash&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="2" name="Stop" sid="362248164900805" type="Perso1" />
+                                <action id="5" name="Set frame" sid="285389806524818" type="Perso1">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="726743272020369">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="350534672782016" type="Perso1">
+                            <param id="0" name="Instance variable">Dash</param>
+                        </condition>
+                        <condition id="-1" name="Every tick" sid="182661306742376" type="System" />
+                        <condition id="-14" name="Pick by unique ID" sid="676707248148773" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="848056401181456">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="110960293126179" type="System">
+                                    <param id="0" name="Variable">UID1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="770153224150454" type="Perso1">
+                                    <param id="0" name="Angle">anglePersoDash</param>
+                                    <param id="1" name="Distance">Perso1.impulseDash * dt</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="802675284983942" type="Perso1">
+                                    <param id="0" name="Angle">anglePersoDash</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="825870959043122" type="System">
+                                    <param id="0" name="Variable">chronoDash</param>
+                                    <param id="1" name="Value">chronoDash + dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="394515362244893">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="690880258573978" type="System">
+                                    <param id="0" name="Variable">UID2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="243605873526556" type="Perso1">
+                                    <param id="0" name="Angle">anglePersoDash2</param>
+                                    <param id="1" name="Distance">Perso1.impulseDash * dt</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="570910445250563" type="Perso1">
+                                    <param id="0" name="Angle">anglePersoDash2</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="873443093114713" type="System">
+                                    <param id="0" name="Variable">chronoDash2</param>
+                                    <param id="1" name="Value">chronoDash2 + dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="376514929077377">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="213050599523612" type="System">
+                            <param id="0" name="Variable">chronoDash</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">timedash</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="626253414401696" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="258156469120610">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="973241513260497" type="System">
+                                    <param id="0" name="Variable">UID1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="112682010144230" type="Perso1">
+                                    <param id="0" name="Instance variable">Dash</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="722944445689110" type="System">
+                                    <param id="0" name="Variable">anglePersoDash</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="753514134692381" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="2" name="Stop" sid="266528231715746" type="Perso1" />
+                                <action id="5" name="Set frame" sid="483436984621713" type="Perso1">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="975603015201506" type="System">
+                                    <param id="0" name="Variable">chronoDash</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="243755240564330">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="356057977850760" type="System">
+                                    <param id="0" name="Variable">UID2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="910839176550368" type="Perso1">
+                                    <param id="0" name="Instance variable">Dash</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="416279387132756" type="System">
+                                    <param id="0" name="Variable">anglePersoDash2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="104025401030435" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="2" name="Stop" sid="497724735575968" type="Perso1" />
+                                <action id="5" name="Set frame" sid="347991998286122" type="Perso1">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="801467330049019" type="System">
+                                    <param id="0" name="Variable">chronoDash2</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>IA</name>
+    <events>
+        <variable constant="0" name="AnglePerso1" sid="632217919887373" static="0" type="number">0</variable>
+        <variable constant="0" name="tempsDeReaction" sid="284602048110049" static="0" type="number">0.3</variable>
+        <variable constant="0" name="jDernierePositionX" sid="358769203084244" static="0" type="number">0</variable>
+        <variable constant="0" name="jDernierePositionY" sid="829037708375494" static="0" type="number">0</variable>
+        <variable constant="0" name="jDerniereDistance" sid="926857729353121" static="0" type="number">0</variable>
+        <variable constant="0" name="jPositionX" sid="172027408250203" static="0" type="number">0</variable>
+        <variable constant="0" name="jPositionY" sid="339107923066359" static="0" type="number">0</variable>
+        <variable constant="0" name="jDistance" sid="771198038754070" static="0" type="number">0</variable>
+        <variable constant="0" name="jDerniereAngle" sid="936015658551139" static="0" type="number">0</variable>
+        <variable constant="0" name="jAngle" sid="327628737807757" static="0" type="number">0</variable>
+        <event-block sid="609621223455772">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="933784110934773" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="548575969925946">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="387237809865073" type="Perso1">
+                            <param id="0" name="Unique ID">UID1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="452679305018080" type="System">
+                            <param id="0" name="Variable">jDernierePositionX</param>
+                            <param id="1" name="Value">Perso1.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="896461661368089" type="System">
+                            <param id="0" name="Variable">jDernierePositionY</param>
+                            <param id="1" name="Value">Perso1.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="496628402082904">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="132112295352606" type="Perso1">
+                            <param id="0" name="Unique ID">UID2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="809490872573992" type="System">
+                            <param id="0" name="Variable">jDerniereAngle</param>
+                            <param id="1" name="Value">angle(Perso1.X, Perso1.Y, JdernierePositionX, JdernierePositionY)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="792460185205463" type="System">
+                            <param id="0" name="Variable">jDerniereDistance</param>
+                            <param id="1" name="Value">distance(Perso1.X,Perso1.Y,jDernierePositionX,jDernierePositionY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="782196937521247">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="516611746832232" type="System">
+                    <param id="0" name="Interval (seconds)">tempsDeReaction</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <variable constant="0" name="angleMarge" sid="309687388217296" static="0" type="number">5</variable>
+                <variable constant="0" name="distanceMarge" sid="104167734971701" static="0" type="number">5</variable>
+                <variable constant="0" name="distanceSecurite" sid="520787155346531" static="0" type="number">5</variable>
+                <event-block disabled="1" sid="278955425485053">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="244326634252459" type="Perso1">
+                            <param id="0" name="Unique ID">UID1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="917499171796494" type="System">
+                            <param id="0" name="Variable">jPositionX</param>
+                            <param id="1" name="Value">Perso1.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="578148532215183" type="System">
+                            <param id="0" name="Variable">jPositionX</param>
+                            <param id="1" name="Value">Perso1.Y</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="422004946800229" type="System">
+                            <param id="0" name="Variable">AnglePerso1</param>
+                            <param id="1" name="Value">Perso1.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="149184905926592">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="306450675834229" type="Perso1">
+                            <param id="0" name="Unique ID">UID2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="511035293396227" type="System">
+                            <param id="0" name="Variable">jAngle</param>
+                            <param id="1" name="Value">angle(Perso1.X, Perso1.Y, JPositionX, JPositionY)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="710289676588706" type="System">
+                            <param id="0" name="Variable">jDistance</param>
+                            <param id="1" name="Value">distance(Perso1.X,Perso1.Y,jPositionX,jPositionY)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="850571992234806">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="469738965816970" type="System">
+                            <param id="0" name="Variable">jDistance</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">distanceSecurite</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="248159037698591">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="611617442527050" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-23" name="Move at angle" sid="949241276555734" type="Perso1">
+                                    <param id="0" name="Angle">AnglePerso1 + 90</param>
+                                    <param id="1" name="Distance">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="474841809737253">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="470093644296224" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="637519154463933">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="740964658960477" type="System">
+                                    <param id="0" name="Variable">angleMarge</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">abs(jAngle - jDerniereAngle)</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="561402193659398" type="System">
+                                    <param id="0" name="Variable">distanceMarge</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">jDerniereDistance-jDistance</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

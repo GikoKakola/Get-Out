@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Layout 1</layout>
+        <event-sheet order="1">Personnage 1</event-sheet>
+        <event-sheet active="1" order="2">Personnage 2</event-sheet>
+        <event-sheet order="3">Deplacement</event-sheet>
+        <event-sheet order="4">Dash</event-sheet>
+        <event-sheet order="5">Attaque</event-sheet>
+        <event-sheet order="6">Mur</event-sheet>
+        <event-sheet order="7">Hitbox</event-sheet>
+        <event-sheet order="8">Item à effets</event-sheet>
+        <event-sheet order="9">IA</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="object-folder/Wall/" />
+        <folder expanded="1" path="object-folder/Perso/" />
+        <folder expanded="0" path="object-folder/Input/" />
+        <folder expanded="1" path="object-folder/Help to debug/" />
+        <folder expanded="1" path="object-folder/TypeOfWall/" />
+        <folder expanded="1" path="object-folder/collider/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Wall/" />
+        <folder expanded="1" path="animation-folder/Perso1/" />
+        <folder expanded="1" path="animation-folder/TirJ1/" />
+        <folder expanded="1" path="animation-folder/ejectWall/" />
+        <folder expanded="1" path="animation-folder/ColliderAttaque/" />
+        <folder expanded="1" path="animation-folder/ColliderDefense/" />
+        <folder expanded="1" path="animation-folder/Effect_Item/" />
+    </folders-expanded>
+</c2uistate>

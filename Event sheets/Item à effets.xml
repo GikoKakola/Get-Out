@@ -1,0 +1,452 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Item à effets</name>
+    <events>
+        <variable constant="0" name="ChronoItemEffets" sid="321299140442956" static="0" type="number">0</variable>
+        <variable constant="0" name="NombreDEffets" sid="358993117448477" static="0" type="number">5</variable>
+        <variable constant="0" name="TypesRandomDeffets" sid="889682222153434" static="0" type="number">0</variable>
+        <event-block sid="465929930478192">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="140481954308332" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="573023978049239" type="System">
+                    <param id="0" name="Variable">ChronoItemEffets</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="980128943523577">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="400164801659656" type="System" />
+                <condition id="-14" name="Compare variable" sid="731029270558193" type="System">
+                    <param id="0" name="Variable">ChronoItemEffets</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="199204410688815" type="System">
+                    <param id="0" name="Variable">ChronoItemEffets</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="919702240416707">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="986975998365893" type="System">
+                    <param id="0" name="Variable">ChronoItemEffets</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="448202709175112" type="System">
+                    <param id="0" name="Variable">TypesRandomDeffets</param>
+                    <param id="1" name="Value">random(0,NombreDEffets-1)</param>
+                </action>
+                <action id="-3" name="Create object" sid="698884880687663" type="System">
+                    <param id="0" name="Object to create">Effect_Item</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">960</param>
+                    <param id="3" name="Y">540</param>
+                </action>
+                <action id="5" name="Set frame" sid="465369323957928" type="Effect_Item">
+                    <param id="0" name="Frame number">TypesRandomDeffets</param>
+                </action>
+                <action id="-9" name="Set value" sid="795362111078666" type="System">
+                    <param id="0" name="Variable">ChronoItemEffets</param>
+                    <param id="1" name="Value">-1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="507871984549865">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="424698468769643" type="Perso1">
+                    <param id="0" name="Object">Effect_Item</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="257857552122320" type="Perso1">
+                    <param id="0" name="Unique ID">UID1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="345913593966501" type="Function">
+                    <param id="0" name="Name">&quot;Différents Effets&quot;</param>
+                    <param id="1" name="Parameter {n}">UID1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="894412710349188" type="Effect_Item" />
+            </actions>
+        </event-block>
+        <event-block sid="701203917793502">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="169583335788992" type="Perso1">
+                    <param id="0" name="Object">Effect_Item</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="817166226340378" type="Perso1">
+                    <param id="0" name="Unique ID">UID2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="450095375748550" type="Function">
+                    <param id="0" name="Name">&quot;Différents Effets&quot;</param>
+                    <param id="1" name="Parameter {n}">UID2</param>
+                </action>
+                <action id="-9" name="Destroy" sid="968716385293921" type="Effect_Item" />
+            </actions>
+        </event-block>
+        <event-group description="" sid="494759340790863" title="Effets Randomizer">
+            <sub-events>
+                <event-block sid="976540342610077">
+                    <conditions>
+                        <condition id="0" name="On function" sid="244058623147158" type="Function">
+                            <param id="0" name="Name">&quot;Différents Effets&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="321200911394274" type="Perso1">
+                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="212950043911320">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="939824159507139" type="Effect_Item">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="499632865335985" type="System">
+                                    <param id="0" name="Variable">ChronoItemEffets</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="930153727628577" type="Perso1">
+                                    <param id="0" name="Animation">&quot;BuffVitesse&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="367086564116087" type="Perso1">
+                                    <param id="0" name="Instance variable">VitesseMouvement</param>
+                                    <param id="1" name="Value">Perso1.VitesseMouvement * 1.5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="496359901446171" type="System">
+                                    <param id="0" name="Seconds">5</param>
+                                </action>
+                                <action id="2" name="Stop" sid="277931894110185" type="Perso1" />
+                                <action id="-10" name="Set value" sid="823867684630458" type="Perso1">
+                                    <param id="0" name="Instance variable">VitesseMouvement</param>
+                                    <param id="1" name="Value">Perso1.VitesseMouvement /1.5</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="724308261079251" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="382911757040247">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="118799136891918" type="Effect_Item">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="414329268173613" type="System">
+                                    <param id="0" name="Variable">ChronoItemEffets</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="303548135897856" type="Perso1">
+                                    <param id="0" name="Animation">&quot;NerfVitesse&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="960808157505110" type="Perso1">
+                                    <param id="0" name="Instance variable">VitesseMouvement</param>
+                                    <param id="1" name="Value">Perso1.VitesseMouvement /1.5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="745660691546730" type="System">
+                                    <param id="0" name="Seconds">5</param>
+                                </action>
+                                <action id="2" name="Stop" sid="623112900411880" type="Perso1" />
+                                <action id="-10" name="Set value" sid="188941874545742" type="Perso1">
+                                    <param id="0" name="Instance variable">VitesseMouvement</param>
+                                    <param id="1" name="Value">Perso1.VitesseMouvement * 1.5</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="314460666287527" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="564689413873703">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="698171300259967" type="Effect_Item">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="858411509164339" type="System">
+                                    <param id="0" name="Variable">ChronoItemEffets</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="508127833586179" type="Perso1">
+                                    <param id="0" name="Animation">&quot;BuffProjection&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="307453242785715" type="Perso1">
+                                    <param id="0" name="Instance variable">impulseAttaque</param>
+                                    <param id="1" name="Value">Perso1.impulseAttaque * 2</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="957125703535077" type="System">
+                                    <param id="0" name="Seconds">5</param>
+                                </action>
+                                <action id="2" name="Stop" sid="554652201067441" type="Perso1" />
+                                <action id="-10" name="Set value" sid="785879031621588" type="Perso1">
+                                    <param id="0" name="Instance variable">impulseAttaque</param>
+                                    <param id="1" name="Value">Perso1.impulseAttaque / 2</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="478011053099911" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="867376500504489">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="682461872220058" type="Effect_Item">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="932615145335791" type="System">
+                                    <param id="0" name="Variable">ChronoItemEffets</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="852601896088165" type="Perso1">
+                                    <param id="0" name="Animation">&quot;NerfProjection&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="241973256856418" type="Perso1">
+                                    <param id="0" name="Instance variable">impulseAttaque</param>
+                                    <param id="1" name="Value">Perso1.impulseAttaque / 2</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="794149226651151" type="System">
+                                    <param id="0" name="Seconds">5</param>
+                                </action>
+                                <action id="2" name="Stop" sid="724948228584858" type="Perso1" />
+                                <action id="-10" name="Set value" sid="542433057132856" type="Perso1">
+                                    <param id="0" name="Instance variable">impulseAttaque</param>
+                                    <param id="1" name="Value">Perso1.impulseAttaque * 2</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="253698902901165" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="114594131213751">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="638896532934099" type="Effect_Item">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="854628363286648" type="System">
+                                    <param id="0" name="Variable">ChronoItemEffets</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="219204404732485" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Invulnerable&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="936434587476023" type="Perso1">
+                                    <param id="0" name="Instance variable">invulnerable</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="218921827711743" type="System">
+                                    <param id="0" name="Seconds">5</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="602447491687142" type="Perso1">
+                                    <param id="0" name="Instance variable">invulnerable</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="2" name="Stop" sid="459964159285503" type="Perso1" />
+                                <action id="4" name="Set animation" sid="383393977687186" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="434713467299983" title="Mouvement Item à effets">
+            <sub-events>
+                <event-block sid="626613182420060">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="875113446123622" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-17" name="Move forward" sid="651077994298272" type="Effect_Item">
+                            <param id="0" name="Distance">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="900927940319475">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="159052231123782" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Rotate clockwise" sid="431406217748628" type="Effect_Item">
+                            <param id="0" name="Degrees">random(-90,90)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="328556648218906">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="787607329739640" type="Effect_Item">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="608243065613998" type="Wall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="395496637183247" type="Effect_Item">
+                            <param id="0" name="Angle">-Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="690625784352588">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="992461850579773" type="Effect_Item">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="493063199370035" type="Wall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight-25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="522870958118076" type="Effect_Item">
+                            <param id="0" name="Angle">-Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="932953784851792">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="581326100723876" type="Effect_Item">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="727028835534599" type="Wall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth-25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="964063358530464" type="Effect_Item">
+                            <param id="0" name="Angle">180 -Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="125834803552817">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="664709313529895" type="Effect_Item">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="906235760740360" type="Wall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="902549593985555" type="Effect_Item">
+                            <param id="0" name="Angle">180 -Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="297739911777977">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="492449448872911" type="Effect_Item" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="941698068860269" type="System">
+                            <param id="0" name="Variable">ChronoItemEffets</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="873040678746870" type="Effect_Item" />
+                    </actions>
+                </event-block>
+                <event-block sid="565511233689599">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="346251554913554" type="Effect_Item">
+                            <param id="0" name="Object">ejectWall</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="816704302698947" type="ejectWall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="678319031384506" type="Effect_Item">
+                            <param id="0" name="Angle">-Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="743212115999819">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="343558475867690" type="Effect_Item">
+                            <param id="0" name="Object">ejectWall</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="750115936239385" type="ejectWall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight-25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="334319538084224" type="Effect_Item">
+                            <param id="0" name="Angle">-Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="738140015093857">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="475466416023640" type="Effect_Item">
+                            <param id="0" name="Object">ejectWall</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="907277923178265" type="ejectWall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth-25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="777582090802710" type="Effect_Item">
+                            <param id="0" name="Angle">180 -Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="779480274991093">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="180146860082024" type="Effect_Item">
+                            <param id="0" name="Object">ejectWall</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="336225784961091" type="ejectWall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="656182710811628" type="Effect_Item">
+                            <param id="0" name="Angle">180 -Effect_Item.Angle</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

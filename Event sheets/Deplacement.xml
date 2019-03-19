@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Deplacement</name>
+    <events>
+        <event-block sid="655303858833501">
+            <conditions>
+                <condition id="0" name="On function" sid="374799214353058" type="Function">
+                    <param id="0" name="Name">&quot;Deplacement&quot;</param>
+                </condition>
+                <condition id="-1" name="Every tick" sid="429556158214814" type="System" />
+                <condition id="-14" name="Pick by unique ID" sid="423072673851949" type="Perso1">
+                    <param id="0" name="Unique ID">Function.Param(1)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="4" name="Set max speed" sid="630807562005016" type="Perso1">
+                    <param id="0" name="Max Speed">Perso1.VitesseMouvement</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="488348268442924">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="647743946708533" type="Perso1">
+                            <param id="0" name="Instance variable">Dash</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="9" name="Set vector X" sid="406293030903880" type="Perso1">
+                            <param id="0" name="Vector X">Gamepad.Axis(Function.Param(0),0) * Perso1.VitesseMouvement </param>
+                        </action>
+                        <action behavior="8Direction" id="10" name="Set vector Y" sid="802522100139697" type="Perso1">
+                            <param id="0" name="Vector Y">Gamepad.Axis(Function.Param(0),1) * Perso1.VitesseMouvement</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Personnage 2</name>
+    <events>
+        <variable constant="1" name="GAMEPAD2" sid="973551292401910" static="0" type="number">1</variable>
+        <event-group description="" sid="926994204755602" title="Perso 2">
+            <sub-events>
+                <event-group description="" sid="967265199920674" title="Tir2">
+                    <sub-events>
+                        <event-block sid="721983228125335">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="831803351534524" type="Gamepad">
+                                    <param id="0" name="Gamepad">GAMEPAD2</param>
+                                    <param id="1" name="Button">7</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="996116712067176" type="System">
+                                    <param id="0" name="Variable">CoolDownTirJ2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="356798416254400" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="563191643094376" type="Perso1">
+                                    <param id="0" name="Instance variable">Stun</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="481237404767446" type="TirJ1">
+                                    <param id="0" name="Object">TirJ1</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="506008717884627" type="Audio">
+                                    <param id="0" name="Audio file">Laser</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="-3" name="Set position" sid="693693459626567" type="TirJ1">
+                                    <param id="0" name="X">Perso1.X</param>
+                                    <param id="1" name="Y">Perso1.Y</param>
+                                </action>
+                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="883154112468827" type="TirJ1">
+                                    <param id="0" name="Angle">Perso1.Angle</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="391127586453173" type="System">
+                                    <param id="0" name="Variable">CoolDownTirJ1</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="572972519910240" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="239363158653960" type="System">
+                                    <param id="0" name="Variable">CoolDownTirJ1</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="739534048663052">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="774917161141504" type="TirJ1">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="-2" name="Compare Y" sid="675032017766999" type="Wall">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Y co-ordinate">25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="457592463235851" type="TirJ1" />
+                                <action behavior="Physics" id="27" name="Set enabled" sid="741583684713256" type="Wall">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Physics" id="12" name="Set world gravity" sid="350149767828810" type="Wall">
+                                    <param id="0" name="Gravity">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="823442223985412">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="888663699429054" type="TirJ1">
+                                    <param id="0" name="Object">Wall</param>
+                                </condition>
+                                <condition id="-2" name="Compare Y" sid="842787810440283" type="Wall">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="237333992692029" type="TirJ1" />
+                                <action id="-9" name="Destroy" sid="794251227997002" type="Wall" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="741229706779152">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="285419578742263" type="Wall">
+                                    <param id="0" name="Comparison">5</param>
+                                    <param id="1" name="Y co-ordinate">1040</param>
+                                </condition>
+                                <condition id="-2" name="Compare Y" sid="732404857915875" type="Wall">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="Y co-ordinate">1054</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="948240557012829" type="Wall" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="Regroupement des actions pour déplacer le perso 1 a la manette" sid="854243713096818" title="Déplacement2">
+                    <sub-events>
+                        <event-block sid="501762768898062">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="338232235498421" type="System" />
+                                <condition id="-14" name="Pick by unique ID" sid="957284419152338" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="220450647045336" type="Perso1">
+                                    <param id="0" name="Instance variable">Stun</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="646391658395655" type="Function">
+                                    <param id="0" name="Name">&quot;Deplacement&quot;</param>
+                                    <param id="1" name="Parameter {n}">GAMEPAD2{###}UID2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="Attaque du joueur 1" sid="906923471771125" title="Attaque2">
+                    <sub-events>
+                        <event-block sid="810915670804437">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="126213663997161" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Attaque&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="449501852902479" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="973461294775466" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-group description="" sid="786948178752880" title="Attaque a gauche3">
+                            <sub-events>
+                                <event-block sid="986413040908733">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="824482711217253" type="Gamepad">
+                                            <param id="0" name="Gamepad">GAMEPAD2</param>
+                                            <param id="1" name="Button">2</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="380974472514324" type="Perso1">
+                                            <param id="0" name="Unique ID">UID2</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="158317077220683" type="ColliderAttaque">
+                                            <param id="0" name="Unique ID">UID4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="977532799699101" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="233845936394312" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">angleAttaque</param>
+                                            <param id="1" name="Value">-45</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="316770035673271" type="Perso1">
+                                            <param id="0" name="Animation">&quot;Attaque&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="618421183642633" title="Attaque tout droit3">
+                            <sub-events>
+                                <event-block sid="125429321967407">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="537853476325142" type="Gamepad">
+                                            <param id="0" name="Gamepad">GAMEPAD2</param>
+                                            <param id="1" name="Button">3</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="804071841924777" type="Perso1">
+                                            <param id="0" name="Unique ID">UID2</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="763983468759753" type="ColliderAttaque">
+                                            <param id="0" name="Unique ID">UID4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="996563080080552" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">angleAttaque</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="393293881980009" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="907313370683464" type="Perso1">
+                                            <param id="0" name="Animation">&quot;Attaque&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-group description="" sid="416890001565914" title="Attaque a droite3">
+                            <sub-events>
+                                <event-block sid="750052820005206">
+                                    <conditions>
+                                        <condition id="6" name="On button pressed" sid="980155093833134" type="Gamepad">
+                                            <param id="0" name="Gamepad">GAMEPAD2</param>
+                                            <param id="1" name="Button">1</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="552128170182155" type="Perso1">
+                                            <param id="0" name="Unique ID">UID2</param>
+                                        </condition>
+                                        <condition id="-14" name="Pick by unique ID" sid="584814543379541" type="ColliderAttaque">
+                                            <param id="0" name="Unique ID">UID4</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="448037679733422" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">angleAttaque</param>
+                                            <param id="1" name="Value">45</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="149225851507944" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="855292153228942" type="Perso1">
+                                            <param id="0" name="Animation">&quot;Attaque&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-group>
+                        <event-block sid="364539294130858">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="574518581425717" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="137583639896982" type="help3">
+                                    <param id="0" name="Text">chronoAttaque</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Bouton de bloque = LB</comment>
+                    </sub-events>
+                </event-group>
+                <event-group description="Dash du joueur 1" sid="787385663379948" title="Dash2">
+                    <sub-events>
+                        <event-block sid="286434425038035">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="942814048672232" type="Gamepad">
+                                    <param id="0" name="Gamepad">GAMEPAD2</param>
+                                    <param id="1" name="Button">0</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="291490541962862" type="Perso1">
+                                    <param id="0" name="Instance variable">Dash</param>
+                                </condition>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="356573825978785" type="Perso1">
+                                    <param id="0" name="Instance variable">Stun</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="122273441845486" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="862513077407647" type="Function">
+                                    <param id="0" name="Name">&quot;Dash&quot;</param>
+                                    <param id="1" name="Parameter {n}">Perso1.Angle{###}UID2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="812203595616970">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="131935053864070" type="Perso1">
+                                    <param id="0" name="Instance variable">Dash</param>
+                                </condition>
+                                <condition id="-1" name="Every tick" sid="781931306741760" type="System" />
+                                <condition id="-14" name="Pick by unique ID" sid="160033772040904" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="817024626733082" type="Function">
+                                    <param id="0" name="Name">&quot;Dash&quot;</param>
+                                    <param id="1" name="Parameter {n}">Perso1.Angle{###}UID2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="524653653098067" title="Defense2">
+                    <sub-events>
+                        <event-block sid="145971446803693">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="992314850933872" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Defense&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="348972490385597" type="Perso1">
+                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="259154650030318">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="539031374551666" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="590125553635837" type="ColliderAttaque">
+                                    <param id="0" name="Unique ID">UID4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="842395751473903">
+                                    <conditions>
+                                        <condition id="3" name="Is button down" sid="294093688689415" type="Gamepad">
+                                            <param id="0" name="Gamepad">GAMEPAD2</param>
+                                            <param id="1" name="Button">6</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="409757622934039" type="ColliderAttaque">
+                                            <param id="0" name="Instance variable">Action</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="689558409346034" type="Perso1">
+                                            <param id="0" name="Animation">&quot;Defense&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
