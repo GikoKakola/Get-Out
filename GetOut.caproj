@@ -232,6 +232,19 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="GameOver">
+            <object-type name="Sprite" sid="563218516996760">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="669158710175261" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="End" sid="240881098983620">
+                <plugin id="Text" />
+            </object-type>
+        </object-folder>
         <object-type name="Function" sid="493065210464484">
             <plugin id="Function" />
         </object-type>
@@ -323,6 +336,7 @@
         <event-sheet>Item à effets.xml</event-sheet>
         <event-sheet>Personnage 2.xml</event-sheet>
         <event-sheet>IA.xml</event-sheet>
+        <event-sheet>EndGame.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="43" />

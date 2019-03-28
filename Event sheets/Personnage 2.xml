@@ -3,6 +3,13 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Personnage 2</name>
     <events>
+        <include>Mur</include>
+        <include>Item à effets</include>
+        <include>Hitbox</include>
+        <include>Attaque</include>
+        <include>Deplacement</include>
+        <include>Dash</include>
+        <include>EndGame</include>
         <variable constant="1" name="GAMEPAD2" sid="973551292401910" static="0" type="number">1</variable>
         <event-group description="" sid="926994204755602" title="Perso 2">
             <sub-events>

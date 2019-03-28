@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EndGame</name>
+    <events>
+        <event-block sid="934465275410978">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="408710547900787" type="Perso1">
+                    <param id="0" name="Object">Sprite</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="144183385985322">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="506422613776671" type="Perso1">
+                            <param id="0" name="Unique ID">UID1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="276655995947983" type="Perso1" />
+                        <action id="0" name="Set text" sid="949430353802890" type="End">
+                            <param id="0" name="Text">&quot;Player 2 Win !!!&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="785446953464355" type="End" />
+                    </actions>
+                </event-block>
+                <event-block sid="369287427216864">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="247321773998942" type="Perso1">
+                            <param id="0" name="Unique ID">UID2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="646944493980078" type="Perso1" />
+                        <action id="0" name="Set text" sid="918655206952932" type="End">
+                            <param id="0" name="Text">&quot;Player 1 Win !!!&quot;</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="640657722705309" type="End" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

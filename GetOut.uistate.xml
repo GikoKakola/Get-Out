@@ -10,16 +10,17 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Layout 1</layout>
+        <layout active="1" order="10">Layout 1</layout>
         <event-sheet order="1">Personnage 1</event-sheet>
-        <event-sheet active="1" order="2">Personnage 2</event-sheet>
-        <event-sheet order="3">Deplacement</event-sheet>
-        <event-sheet order="4">Dash</event-sheet>
-        <event-sheet order="5">Attaque</event-sheet>
-        <event-sheet order="6">Mur</event-sheet>
-        <event-sheet order="7">Hitbox</event-sheet>
-        <event-sheet order="8">Item à effets</event-sheet>
+        <event-sheet order="2">Deplacement</event-sheet>
+        <event-sheet order="3">Dash</event-sheet>
+        <event-sheet order="4">Attaque</event-sheet>
+        <event-sheet order="5">Mur</event-sheet>
+        <event-sheet order="6">Hitbox</event-sheet>
+        <event-sheet order="7">Item à effets</event-sheet>
+        <event-sheet order="8">Personnage 2</event-sheet>
         <event-sheet order="9">IA</event-sheet>
+        <event-sheet order="0">EndGame</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -36,6 +37,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="object-folder/Help to debug/" />
         <folder expanded="1" path="object-folder/TypeOfWall/" />
         <folder expanded="1" path="object-folder/collider/" />
+        <folder expanded="1" path="object-folder/GameOver/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="file-folder/" />
@@ -48,6 +50,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/ejectWall/" />
         <folder expanded="1" path="animation-folder/ColliderAttaque/" />
         <folder expanded="1" path="animation-folder/ColliderDefense/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
         <folder expanded="1" path="animation-folder/Effect_Item/" />
     </folders-expanded>
 </c2uistate>

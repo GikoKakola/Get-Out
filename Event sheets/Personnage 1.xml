@@ -19,6 +19,7 @@
         <include>Attaque</include>
         <include>Dash</include>
         <include>Deplacement</include>
+        <include>EndGame</include>
         <event-block sid="209018899686090">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="260285718696677" type="System" />
