@@ -103,6 +103,7 @@
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="265794157447097" type="Perso1">
                                             <param id="0" name="Instance variable">Defense</param>
                                         </condition>
+                                        <condition behavior="8Direction" id="0" name="Is moving" sid="266494904672607" type="Perso1" />
                                     </conditions>
                                     <actions>
                                         <action id="-8" name="Set angle" sid="585882265243382" type="Perso1">
@@ -128,6 +129,7 @@
                                         <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="985713646930935" type="Perso1">
                                             <param id="0" name="Instance variable">Defense</param>
                                         </condition>
+                                        <condition behavior="8Direction" id="0" name="Is moving" sid="547417458286882" type="Perso1" />
                                     </conditions>
                                     <actions>
                                         <action id="-8" name="Set angle" sid="689130950378014" type="Perso1">
