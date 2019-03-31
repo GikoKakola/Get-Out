@@ -36,5 +36,110 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="Lock par la distance" sid="595522000330274" title="Systeme Lock Distance">
+            <sub-events>
+                <variable comment="Position X de l&apos;adversaire" constant="0" name="EnnemiX" sid="755868931879386" static="1" type="number">0</variable>
+                <variable comment="Position y de l&apos;adversaire" constant="0" name="EnnemiY" sid="687341166968954" static="1" type="number">0</variable>
+                <variable comment="Position X de l&apos;adversaire" constant="0" name="EnnemiX2" sid="248309942575845" static="1" type="number">0</variable>
+                <variable comment="Position y de l&apos;adversaire" constant="0" name="EnnemiY2" sid="333336677607954" static="1" type="number">0</variable>
+                <variable constant="1" name="DISTANCELOCKMAXIMAL" sid="274977013427414" static="1" type="number">300</variable>
+                <event-block sid="325911716640306">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="955397586000244" type="Perso1">
+                            <param id="0" name="Unique ID">UID1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="987038041273200" type="System">
+                            <param id="0" name="Variable">EnnemiX</param>
+                            <param id="1" name="Value">Perso1.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="149776132437054" type="System">
+                            <param id="0" name="Variable">EnnemiY</param>
+                            <param id="1" name="Value">Perso1.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="736431302460258">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="989912781262479" type="Perso1">
+                            <param id="0" name="Unique ID">UID2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="329140727762228" type="System">
+                            <param id="0" name="Variable">EnnemiX2</param>
+                            <param id="1" name="Value">Perso1.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="861513807567795" type="System">
+                            <param id="0" name="Variable">EnnemiY2</param>
+                            <param id="1" name="Value">Perso1.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="222056512206807">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="715961019063026" type="System">
+                            <param id="0" name="Variable">DISTANCELOCKMAXIMAL</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">distance(EnnemiX,EnnemiY,EnnemiX2,EnnemiY2)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="372314387723155">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="703057890682868" type="Perso1">
+                                    <param id="0" name="Unique ID">UID1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="326295620397061">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="985845650111536" type="Perso1">
+                                            <param id="0" name="Instance variable">Dash</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="265794157447097" type="Perso1">
+                                            <param id="0" name="Instance variable">Defense</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="585882265243382" type="Perso1">
+                                            <param id="0" name="Angle">angle(Perso1.X,Perso1.Y, EnnemiX2, EnnemiY2)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="154274260816295">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="716008147958261" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="869310050672327">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="965868022763936" type="Perso1">
+                                            <param id="0" name="Instance variable">Dash</param>
+                                        </condition>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="985713646930935" type="Perso1">
+                                            <param id="0" name="Instance variable">Defense</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-8" name="Set angle" sid="689130950378014" type="Perso1">
+                                            <param id="0" name="Angle">angle(Perso1.X,Perso1.Y, EnnemiX, EnnemiY)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

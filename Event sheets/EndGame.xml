@@ -6,7 +6,7 @@
         <event-block sid="934465275410978">
             <conditions>
                 <condition id="1" inverted="1" name="Is overlapping another object" sid="408710547900787" type="Perso1">
-                    <param id="0" name="Object">Sprite</param>
+                    <param id="0" name="Object">Background</param>
                 </condition>
             </conditions>
             <actions />

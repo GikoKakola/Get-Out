@@ -2,7 +2,7 @@
 <c2project>
     <name>GetOut</name>
     <description></description>
-    <version>4.7.0.0</version>
+    <version>4.8.0.0</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -86,6 +86,7 @@
                     <instance-variable name="Stun" sid="833438581796868" type="boolean" />
                     <instance-variable name="movement" sid="384575268938318" type="boolean" />
                     <instance-variable name="invulnerable" sid="783364436990930" type="boolean" />
+                    <instance-variable name="Defense" sid="410480754747757" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Physics" sid="370860573872788">
@@ -240,7 +241,7 @@
             </object-type>
         </object-folder>
         <object-folder name="GameOver">
-            <object-type name="Sprite" sid="563218516996760">
+            <object-type name="Background" sid="563218516996760">
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="669158710175261" speed="5">

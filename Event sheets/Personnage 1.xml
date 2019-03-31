@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Personnage 1</name>
     <events>
-        <variable constant="1" name="GAMEPAD1" sid="258413384030835" static="0" type="number">1</variable>
+        <variable constant="1" name="GAMEPAD1" sid="258413384030835" static="0" type="number">0</variable>
         <variable constant="0" name="CoolDownTirJ1" sid="598902755609704" static="0" type="number">1</variable>
         <variable constant="0" name="CoolDownTirJ2" sid="481240720954245" static="0" type="number">1</variable>
         <variable constant="0" name="speedPerso" sid="720518255779408" static="0" type="number">0</variable>
@@ -46,6 +46,91 @@
         </event-block>
         <event-group description="" sid="388670569250156" title="Perso 1">
             <sub-events>
+                <event-group description="Lock manuel par le joueur 1" disabled="1" sid="149546982343923" title="Systeme Lock Manuel">
+                    <sub-events>
+                        <variable comment="Position X de l&apos;adversaire" constant="0" name="EnnemiX" sid="278401632222377" static="1" type="number">0</variable>
+                        <variable comment="Position y de l&apos;adversaire" constant="0" name="EnnemiY" sid="942984334713988" static="1" type="number">0</variable>
+                        <variable comment="0 = False       1 = True" constant="0" name="LockJ1" sid="638961947024659" static="1" type="number">0</variable>
+                        <event-block disabled="1" sid="562204954960685">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="937889092138670" type="Perso1">
+                                    <param id="0" name="Unique ID">UID2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="795797697674112" type="System">
+                                    <param id="0" name="Variable">EnnemiX</param>
+                                    <param id="1" name="Value">Perso1.X</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="546912942251415" type="System">
+                                    <param id="0" name="Variable">EnnemiY</param>
+                                    <param id="1" name="Value">Perso1.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="585407434627196">
+                            <conditions>
+                                <condition id="6" name="On button pressed" sid="385943635756113" type="Gamepad">
+                                    <param id="0" name="Gamepad">GAMEPAD1</param>
+                                    <param id="1" name="Button">5</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="322243901241551" type="Perso1">
+                                    <param id="0" name="Unique ID">UID1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="842835233832526">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="121754992281103" type="System">
+                                            <param id="0" name="Variable">LockJ1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="235600247370032" type="System">
+                                            <param id="0" name="Variable">LockJ1</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="631552717871996">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="223754695450202" type="System">
+                                            <param id="0" name="Variable">LockJ1</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="258711539242964" type="System">
+                                            <param id="0" name="Variable">LockJ1</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="957420641703231">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="882800995018965" type="System">
+                                    <param id="0" name="Variable">LockJ1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" name="Pick by unique ID" sid="465309573209156" type="Perso1">
+                                    <param id="0" name="Unique ID">UID1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-8" name="Set angle" sid="862520923767917" type="Perso1">
+                                    <param id="0" name="Angle">angle(Perso1.X,Perso1.Y, EnnemiX, EnnemiY)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
                 <event-group description="" sid="660869031516185" title="Tir">
                     <sub-events>
                         <event-block sid="658668906242513">
@@ -332,10 +417,15 @@
                 </event-group>
                 <event-group description="" sid="491190618153917" title="Defense">
                     <sub-events>
-                        <event-block sid="929004613816480">
+                        <variable constant="0" name="tempsRecup" sid="414622289058147" static="1" type="number">2</variable>
+                        <event-block any="1" sid="929004613816480">
                             <conditions>
                                 <condition id="4" name="On finished" sid="187465488830988" type="Perso1">
                                     <param id="0" name="Animation">&quot;Defense&quot;</param>
+                                </condition>
+                                <condition id="7" name="On button released" sid="869742038124164" type="Gamepad">
+                                    <param id="0" name="Gamepad">GAMEPAD1</param>
+                                    <param id="1" name="Button">6</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -343,15 +433,19 @@
                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
+                                <action disabled="1" id="-16" name="Wait" sid="378996732136400" type="System">
+                                    <param id="0" name="Seconds">tempsRecup</param>
+                                </action>
+                                <action disabled="1" id="-13" name="Set boolean" sid="834491161228852" type="Perso1">
+                                    <param id="0" name="Instance variable">Defense</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="824348358510976">
                             <conditions>
                                 <condition id="-14" name="Pick by unique ID" sid="410393893684951" type="Perso1">
                                     <param id="0" name="Unique ID">UID1</param>
-                                </condition>
-                                <condition id="-14" name="Pick by unique ID" sid="429247125972817" type="ColliderAttaque">
-                                    <param id="0" name="Unique ID">UID3</param>
                                 </condition>
                             </conditions>
                             <actions />
@@ -362,11 +456,18 @@
                                             <param id="0" name="Gamepad">GAMEPAD1</param>
                                             <param id="1" name="Button">6</param>
                                         </condition>
+                                        <condition disabled="1" id="-8" inverted="1" name="Is boolean instance variable set" sid="899674528296848" type="Perso1">
+                                            <param id="0" name="Instance variable">Defense</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action id="4" name="Set animation" sid="559369809864293" type="Perso1">
                                             <param id="0" name="Animation">&quot;Defense&quot;</param>
                                             <param id="1" name="From">1</param>
+                                        </action>
+                                        <action disabled="1" id="-13" name="Set boolean" sid="779637198732302" type="Perso1">
+                                            <param id="0" name="Instance variable">Defense</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
