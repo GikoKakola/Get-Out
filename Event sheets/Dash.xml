@@ -21,15 +21,49 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="973450900911638" type="System">
-                    <param id="0" name="Variable">anglePersoDash</param>
-                    <param id="1" name="Value">-anglePersoDash</param>
-                </action>
                 <action id="-9" name="Set value" sid="342321820230766" type="System">
                     <param id="0" name="Variable">chronoDash</param>
                     <param id="1" name="Value">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block any="1" sid="900275498797240">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="491461024456539" type="Wall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">25</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="490352736285752" type="Wall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight-25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="108487502881979" type="System">
+                            <param id="0" name="Variable">anglePersoDash</param>
+                            <param id="1" name="Value">-anglePersoDash</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="535048716826821">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="176917842648771" type="Wall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth-25</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="564638156054899" type="Wall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="203038534089395" type="System">
+                            <param id="0" name="Variable">anglePersoDash</param>
+                            <param id="1" name="Value">180 - anglePersoDash</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="425611075838045">
             <conditions>
@@ -44,15 +78,49 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Set value" sid="649854256641871" type="System">
-                    <param id="0" name="Variable">anglePersoDash2</param>
-                    <param id="1" name="Value">-anglePersoDash2</param>
-                </action>
                 <action id="-9" name="Set value" sid="735451548769984" type="System">
                     <param id="0" name="Variable">chronoDash2</param>
                     <param id="1" name="Value">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block any="1" sid="479961522518955">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="298835163305936" type="Wall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">25</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="239753417447851" type="Wall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight-25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="219252856637058" type="System">
+                            <param id="0" name="Variable">anglePersoDash2</param>
+                            <param id="1" name="Value">-anglePersoDash2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="393067658865566">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="258343718081019" type="Wall">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth-25</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="521500363476742" type="Wall">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="X co-ordinate">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="460023221198335" type="System">
+                            <param id="0" name="Variable">anglePersoDash2</param>
+                            <param id="1" name="Value">180 - anglePersoDash2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="806506289133024">
             <conditions>
@@ -198,11 +266,6 @@
                 </event-block>
                 <event-block sid="376514929077377">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="213050599523612" type="System">
-                            <param id="0" name="Variable">chronoDash</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">timedash</param>
-                        </condition>
                         <condition id="-14" name="Pick by unique ID" sid="626253414401696" type="Perso1">
                             <param id="0" name="Unique ID">Function.Param(1)</param>
                         </condition>
@@ -215,6 +278,11 @@
                                     <param id="0" name="Variable">UID1</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="213050599523612" type="System">
+                                    <param id="0" name="Variable">chronoDash</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">timedash</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -246,6 +314,11 @@
                                     <param id="0" name="Variable">UID2</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">Function.Param(1)</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="279187753089947" type="System">
+                                    <param id="0" name="Variable">chronoDash2</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">timedash</param>
                                 </condition>
                             </conditions>
                             <actions>

@@ -10,7 +10,7 @@
         <include>Deplacement</include>
         <include>Dash</include>
         <include>EndGame</include>
-        <variable constant="1" name="GAMEPAD2" sid="973551292401910" static="0" type="number">1</variable>
+        <variable constant="1" name="GAMEPAD2" sid="973551292401910" static="0" type="number">0</variable>
         <event-group description="" sid="926994204755602" title="Perso 2">
             <sub-events>
                 <event-group description="" sid="967265199920674" title="Tir2">
@@ -172,10 +172,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="977532799699101" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="233845936394312" type="ColliderAttaque">
                                             <param id="0" name="Instance variable">angleAttaque</param>
                                             <param id="1" name="Value">-45</param>
@@ -204,10 +200,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="996563080080552" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">angleAttaque</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="393293881980009" type="ColliderAttaque">
                                             <param id="0" name="Instance variable">Action</param>
                                             <param id="1" name="Value">0</param>
@@ -239,10 +231,6 @@
                                         <action id="-10" name="Set value" sid="448037679733422" type="ColliderAttaque">
                                             <param id="0" name="Instance variable">angleAttaque</param>
                                             <param id="1" name="Value">45</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="149225851507944" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">0</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="855292153228942" type="Perso1">
                                             <param id="0" name="Animation">&quot;Attaque&quot;</param>
@@ -329,9 +317,6 @@
                                 <condition id="-14" name="Pick by unique ID" sid="539031374551666" type="Perso1">
                                     <param id="0" name="Unique ID">UID2</param>
                                 </condition>
-                                <condition id="-14" name="Pick by unique ID" sid="590125553635837" type="ColliderAttaque">
-                                    <param id="0" name="Unique ID">UID4</param>
-                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -343,10 +328,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="409757622934039" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
                                         <action id="4" name="Set animation" sid="689558409346034" type="Perso1">
                                             <param id="0" name="Animation">&quot;Defense&quot;</param>
                                             <param id="1" name="From">1</param>

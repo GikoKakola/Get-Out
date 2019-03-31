@@ -2,7 +2,7 @@
 <c2project>
     <name>GetOut</name>
     <description></description>
-    <version>4.5.0.0</version>
+    <version>4.7.0.0</version>
     <author></author>
     <author-email></author-email>
     <author-website>http://</author-website>
@@ -116,10 +116,10 @@
                     </animation>
                     <animation framecount="1" loop="0" name="Dash" pingpong="0" repeatcount="1" repeatto="0" sid="308167773021369" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Imagepoint 1" x="0.775" y="0.525" />
-                            <image-point name="Imagepoint 2" x="1.025" y="0.5" />
-                            <image-point name="Imagepoint 3" x="0.9" y="1" />
-                            <image-point name="Imagepoint 4" x="0.925" y="0" />
+                            <image-point name="debutX" x="0.775" y="0.525" />
+                            <image-point name="FinX" x="1.025" y="0.5" />
+                            <image-point name="DebutY" x="0.9" y="1" />
+                            <image-point name="FinY" x="0.925" y="0" />
                         </frame>
                     </animation>
                     <animation framecount="2" loop="1" name="BuffVitesse" pingpong="0" repeatcount="1" repeatto="0" sid="618190137396777" speed="5">
@@ -139,7 +139,13 @@
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="2" loop="1" name="Invulnerable" pingpong="0" repeatcount="1" repeatto="0" sid="595466632745524" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="DebutX" x="0.5" y="0.5" />
+                            <image-point name="FinX" x="0.5" y="0.5" />
+                            <image-point name="DebutY" x="0.5" y="0.5" />
+                            <image-point name="FinY" x="0.5" y="0.5" />
+                            <image-point name="IndicateurDefense" x="0.5" y="0.5" />
+                        </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                     <animation framecount="6" loop="0" name="degat" pingpong="0" repeatcount="0" repeatto="0" sid="332450660595163" speed="5">
@@ -152,10 +158,11 @@
                     </animation>
                     <animation framecount="1" loop="0" name="Defense" pingpong="0" repeatcount="1" repeatto="0" sid="141180185762365" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                            <image-point name="Imagepoint 1" x="0.825" y="0.5" />
-                            <image-point name="Imagepoint 2" x="1.025" y="0.525" />
-                            <image-point name="Imagepoint 3" x="0.825" y="1" />
-                            <image-point name="Imagepoint 4" x="0.875" y="0" />
+                            <image-point name="DebutX" x="0.825" y="0.5" />
+                            <image-point name="FinX" x="1.025" y="0.525" />
+                            <image-point name="DebutY" x="0.825" y="1" />
+                            <image-point name="FinY" x="0.875" y="0" />
+                            <image-point name="IndicateurDefense" x="0.5" y="0.5" />
                         </frame>
                     </animation>
                 </animation-folder>

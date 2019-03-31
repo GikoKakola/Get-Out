@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Personnage 1</name>
     <events>
-        <variable constant="1" name="GAMEPAD1" sid="258413384030835" static="0" type="number">0</variable>
+        <variable constant="1" name="GAMEPAD1" sid="258413384030835" static="0" type="number">1</variable>
         <variable constant="0" name="CoolDownTirJ1" sid="598902755609704" static="0" type="number">1</variable>
         <variable constant="0" name="CoolDownTirJ2" sid="481240720954245" static="0" type="number">1</variable>
         <variable constant="0" name="speedPerso" sid="720518255779408" static="0" type="number">0</variable>
@@ -249,10 +249,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="910174291210624" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="613397267315025" type="ColliderAttaque">
                                             <param id="0" name="Instance variable">angleAttaque</param>
                                             <param id="1" name="Value">-45</param>
@@ -281,10 +277,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="392375837993237" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="175433715360875" type="ColliderAttaque">
                                             <param id="0" name="Instance variable">angleAttaque</param>
                                             <param id="1" name="Value">0</param>
@@ -313,10 +305,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="295160516456383" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
                                         <action id="-10" name="Set value" sid="627659977063474" type="ColliderAttaque">
                                             <param id="0" name="Instance variable">angleAttaque</param>
                                             <param id="1" name="Value">45</param>
@@ -376,10 +364,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-10" name="Set value" sid="611935207985986" type="ColliderAttaque">
-                                            <param id="0" name="Instance variable">Action</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
                                         <action id="4" name="Set animation" sid="559369809864293" type="Perso1">
                                             <param id="0" name="Animation">&quot;Defense&quot;</param>
                                             <param id="1" name="From">1</param>

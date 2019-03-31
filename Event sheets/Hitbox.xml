@@ -8,7 +8,8 @@
         <variable comment="Collider Defense J1" constant="1" name="UID5" sid="683397474311658" static="0" type="number">59</variable>
         <variable comment="Collider Defense J2" constant="1" name="UID6" sid="631949652504770" static="0" type="number">60</variable>
         <variable constant="0" name="imagePointNumber2" sid="789683283788886" static="0" type="number">0</variable>
-        <variable constant="1" name="nombreDepointNecessaire" sid="501312562828879" static="0" type="number">4</variable>
+        <variable constant="1" name="NOMBREDEPOINTNECESSAIREATTAQUE" sid="501312562828879" static="0" type="number">4</variable>
+        <variable constant="1" name="NOMBREDEPOINTNECESSAIREDEFENSE" sid="476116374136585" static="0" type="number">5</variable>
         <event-block sid="697319796621581">
             <conditions>
                 <condition id="0" name="On function" sid="407122763617088" type="Function">
@@ -28,19 +29,14 @@
                             <param id="0" name="Unique ID">Function.Param(1)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="670038165614842" type="System">
-                            <param id="0" name="Variable">imagePointNumber2</param>
-                            <param id="1" name="Value">Perso1.ImagePointCount</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="859428871026698">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="138253380908259" type="System">
-                                    <param id="0" name="Variable">imagePointNumber2</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">NOMBREDEPOINTNECESSAIRE</param>
+                                    <param id="0" name="Variable">NOMBREDEPOINTNECESSAIREATTAQUE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Perso1.ImagePointCount</param>
                                 </condition>
                                 <condition id="-14" name="Pick by unique ID" sid="387204372152330" type="Perso1">
                                     <param id="0" name="Unique ID">Function.Param(0)</param>
@@ -67,17 +63,17 @@
                                 <action id="-8" name="Set angle" sid="156124624197553" type="ColliderAttaque">
                                     <param id="0" name="Angle">angle(Perso1.ImagePointX(1), Perso1.ImagePointY(1), Perso1.ImagePointX(2), Perso1.ImagePointY(2))</param>
                                 </action>
-                                <action id="0" name="Log Text" sid="379972325977865" type="ChromeConsole">
+                                <action disabled="1" id="0" name="Log Text" sid="379972325977865" type="ChromeConsole">
                                     <param id="0" name="Data">&quot;done&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
                         <event-block sid="313652367395282">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="360421965632243" type="System">
-                                    <param id="0" name="Variable">imagePointNumber2</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">NOMBREDEPOINTNECESSAIRE</param>
+                                <condition id="-14" name="Compare variable" sid="735183711434580" type="System">
+                                    <param id="0" name="Variable">NOMBREDEPOINTNECESSAIREATTAQUE</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Perso1.ImagePointCount</param>
                                 </condition>
                                 <condition id="-14" name="Pick by unique ID" sid="755774849837640" type="Perso1">
                                     <param id="0" name="Unique ID">Function.Param(0)</param>
@@ -93,7 +89,7 @@
                                 <action id="11" name="Set collisions enabled" sid="951703480601241" type="ColliderAttaque">
                                     <param id="0" name="Collisions">0</param>
                                 </action>
-                                <action id="0" name="Log Text" sid="253798981473749" type="ChromeConsole">
+                                <action disabled="1" id="0" name="Log Text" sid="253798981473749" type="ChromeConsole">
                                     <param id="0" name="Data">&quot;fin&quot;</param>
                                 </action>
                             </actions>
@@ -121,19 +117,14 @@
                             <param id="0" name="Unique ID">Function.Param(1)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="753370029597508" type="System">
-                            <param id="0" name="Variable">imagePointNumber2</param>
-                            <param id="1" name="Value">Perso1.ImagePointCount</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="596138487582692">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="466917960353474" type="System">
-                                    <param id="0" name="Variable">imagePointNumber2</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">NOMBREDEPOINTNECESSAIRE</param>
+                                    <param id="0" name="Variable">NOMBREDEPOINTNECESSAIREDEFENSE</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">Perso1.ImagePointCount</param>
                                 </condition>
                                 <condition id="-14" name="Pick by unique ID" sid="928613711262534" type="Perso1">
                                     <param id="0" name="Unique ID">Function.Param(0)</param>
@@ -164,10 +155,10 @@
                         </event-block>
                         <event-block sid="410813348410497">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="704478851318519" type="System">
-                                    <param id="0" name="Variable">imagePointNumber2</param>
-                                    <param id="1" name="Comparison">2</param>
-                                    <param id="2" name="Value">NOMBREDEPOINTNECESSAIRE</param>
+                                <condition id="-14" name="Compare variable" sid="502748887920100" type="System">
+                                    <param id="0" name="Variable">NOMBREDEPOINTNECESSAIREDEFENSE</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">Perso1.ImagePointCount</param>
                                 </condition>
                                 <condition id="-14" name="Pick by unique ID" sid="936075009776237" type="Perso1">
                                     <param id="0" name="Unique ID">Function.Param(0)</param>
@@ -189,7 +180,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="555768822754490">
+        <event-block disabled="1" sid="555768822754490">
             <conditions>
                 <condition id="-1" name="Every tick" sid="338777831913720" type="System" />
                 <condition id="-14" name="Pick by unique ID" sid="651154777688209" type="ColliderAttaque">
@@ -198,7 +189,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="546109406835016">
+                <event-block disabled="1" sid="546109406835016">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="775922587685444" type="ColliderAttaque">
                             <param id="0" name="Instance variable">Action</param>
@@ -213,7 +204,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="743526788328661">
+                <event-block disabled="1" sid="743526788328661">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="690164582704756" type="ColliderAttaque">
                             <param id="0" name="Instance variable">Action</param>
@@ -230,7 +221,7 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="239561646714084">
+        <event-block disabled="1" sid="239561646714084">
             <conditions>
                 <condition id="-1" name="Every tick" sid="297748026201526" type="System" />
                 <condition id="-14" name="Pick by unique ID" sid="916670641798111" type="ColliderAttaque">
@@ -239,7 +230,7 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="145493560160643">
+                <event-block disabled="1" sid="145493560160643">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="377035429640827" type="ColliderAttaque">
                             <param id="0" name="Instance variable">Action</param>
@@ -254,7 +245,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="471487095365625">
+                <event-block disabled="1" sid="471487095365625">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="870292480549068" type="ColliderAttaque">
                             <param id="0" name="Instance variable">Action</param>
@@ -270,6 +261,27 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="334185663122230">
+            <conditions />
+            <actions>
+                <action id="0" name="Call function" sid="260609262911548" type="Function">
+                    <param id="0" name="Name">&quot;Hitbox&quot;</param>
+                    <param id="1" name="Parameter {n}">UID1{###}UID3</param>
+                </action>
+                <action id="0" name="Call function" sid="223910676740020" type="Function">
+                    <param id="0" name="Name">&quot;HitboxDefense&quot;</param>
+                    <param id="1" name="Parameter {n}">UID1{###}UID5</param>
+                </action>
+                <action id="0" name="Call function" sid="448716256928240" type="Function">
+                    <param id="0" name="Name">&quot;Hitbox&quot;</param>
+                    <param id="1" name="Parameter {n}">UID2{###}UID4</param>
+                </action>
+                <action id="0" name="Call function" sid="337977414867065" type="Function">
+                    <param id="0" name="Name">&quot;HitboxDefense&quot;</param>
+                    <param id="1" name="Parameter {n}">UID2{###}UID6</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
