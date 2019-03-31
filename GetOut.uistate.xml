@@ -12,14 +12,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="10">Layout 1</layout>
         <event-sheet order="0">Personnage 1</event-sheet>
-        <event-sheet order="1">Personnage 2</event-sheet>
+        <event-sheet active="1" order="1">Personnage 2</event-sheet>
         <event-sheet order="2">EndGame</event-sheet>
         <event-sheet order="3">Dash</event-sheet>
         <event-sheet order="4">Attaque</event-sheet>
         <event-sheet order="5">Mur</event-sheet>
         <event-sheet order="6">Hitbox</event-sheet>
         <event-sheet order="7">Item à effets</event-sheet>
-        <event-sheet active="1" order="8">Deplacement</event-sheet>
+        <event-sheet order="8">Deplacement</event-sheet>
         <event-sheet order="9">IA</event-sheet>
     </open-tabs>
     <properties>
